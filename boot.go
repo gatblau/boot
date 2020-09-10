@@ -50,6 +50,7 @@ func main() {
 			if cut > 0 {
 				// get the default value
 				defValue = vname[cut+1:]
+				vname = vname[0:cut]
 			}
 			// retrieve the env variable
 			ev := os.Getenv(vname)
@@ -57,16 +58,18 @@ func main() {
 			if len(ev) == 0 {
 				// if no default value has been defined
 				if len(defValue) == 0 {
-					log.Error().Msgf("environment variable %s not defined", vname)
+					log.Error().Msgf("environment variable '%s' not defined, skipping merging", vname)
 				} else {
 					// merge the default value
 					content = strings.Replace(content, string(v), defValue, 1000)
 					merged = true
+					log.Info().Msgf("merged placeholder %s with default value '%s'", string(v), defValue)
 				}
 			} else {
 				// merge the env variable value
 				content = strings.Replace(content, string(v), ev, 1000)
 				merged = true
+				log.Info().Msgf("merged placeholder %s with value '%s'", string(v), ev)
 			}
 		}
 		// if variables have been merged

@@ -16,6 +16,10 @@
 BUILD_FOLDER=build
 BINARY_NAME=boot
 
+package:
+	$(MAKE) build_linux
+	$(MAKE) build_darwin
+
 build_linux:
 	export GOPATH=$(HOME)/go; export CGO_ENABLED=0; export GOOS=linux; export GOARCH=amd64; go build -o $(BUILD_FOLDER)/$(BINARY_NAME) -v
 	zip -mjT $(BUILD_FOLDER)/$(BINARY_NAME)_linux_amd64.zip $(BUILD_FOLDER)/$(BINARY_NAME)
