@@ -95,5 +95,6 @@ func WriteToFile(filename string, data string) error {
 	if err != nil {
 		return err
 	}
+	log.Info().Msgf("'%v' characters written to file '%s'", len(data), filename)
 	return file.Sync()
 }
