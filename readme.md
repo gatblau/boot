@@ -25,7 +25,7 @@ Simply:
 exec "$@"
 ```
 
-3. Copy boot and the configuration with placehoslders to the docker image
+3. Copy boot and the configuration with placeholders to the docker image
 
 4. Call the bootstrap script from the CMD line (mosquitto mqtt broker example):
    
@@ -68,6 +68,6 @@ cfg3=CCC
 cfg4=DDD
 ```
 
-**NOTE**: using "PWD" as environemtn variable is not allowed as it can retrieve the path of the current process in some OS.
+**NOTE**: using "PWD" as an environment variable is not allowed as it can retrieve the path of the current process in some OS.
 
 If no variables are exported the execution will fail.
