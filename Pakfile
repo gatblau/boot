@@ -1,3 +1,4 @@
 LABEL author="gatblau"
+TYPE golang
 RUN go build .
-PATH boot
+TARGET boot
