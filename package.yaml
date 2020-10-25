@@ -4,7 +4,7 @@ license: Apache Version 2
 labels:
   author: gatblau
   application: boot
-  description:  merges environment variables into configuration files
+  description: merges environment variables into configuration files
 profiles:
   - name: linux
     suffix: none
@@ -13,8 +13,8 @@ profiles:
       architecture: amd64
     run:
       - go fmt
-      - export GOOS=linux; export GOARCH=amd64; go build . -v
-    target: boot
+      - export GOOS=linux; export GOARCH=amd64; go build -o boot-linux-amd64 -v
+    target: boot-linux-amd64
   - name: darwin
     suffix: -darwin
     labels:
@@ -22,6 +22,6 @@ profiles:
       architecture: amd64
     run:
       - go fmt
-      - export GOOS=darwin; export GOARCH=amd64; go build . -v
-    target: boot
+      - export GOOS=darwin; export GOARCH=amd64; go build -o boot-darwin-amd64 -v
+    target: boot-darwin-amd64
 ...
