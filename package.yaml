@@ -10,14 +10,20 @@ profiles:
     labels:
       platform: linux
       architecture: amd64
+    env:
+      GOARCH: amd64
+      GOOS: linux
     run:
       - go fmt
-      - export GOOS=linux; export GOARCH=amd64; go build -o boot-linux-amd64 -v
+      - go build -o boot-linux-amd64 -v
     target: boot-linux-amd64
   - name: darwin
     labels:
       platform: darwin
       architecture: amd64
+    env:
+      GOARCH: amd64
+      GOOS: linux
     run:
       - go fmt
       - export GOOS=darwin; export GOARCH=amd64; go build -o boot-darwin-amd64 -v
