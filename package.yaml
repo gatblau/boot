@@ -26,6 +26,6 @@ profiles:
       GOOS: linux
     run:
       - go fmt
-      - export GOOS=darwin; export GOARCH=amd64; go build -o boot-darwin-amd64 -v
+      - go build -o boot-darwin-amd64 -v
     target: boot-darwin-amd64
 ...
