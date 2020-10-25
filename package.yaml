@@ -7,7 +7,6 @@ labels:
   description: merges environment variables into configuration files
 profiles:
   - name: linux
-    suffix: none
     labels:
       platform: linux
       architecture: amd64
@@ -16,7 +15,6 @@ profiles:
       - export GOOS=linux; export GOARCH=amd64; go build -o boot-linux-amd64 -v
     target: boot-linux-amd64
   - name: darwin
-    suffix: -darwin
     labels:
       platform: darwin
       architecture: amd64
