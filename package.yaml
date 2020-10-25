@@ -5,15 +5,15 @@ labels:
   author: gatblau
   application: boot
   description: merges environment variables into configuration files
+  architecture: amd64
 env:
   CGO_ENABLED: 0
+  GOARCH: amd64
 profiles:
   - name: linux
     labels:
       platform: linux
-      architecture: amd64
     env:
-      GOARCH: amd64
       GOOS: linux
     run:
       - go fmt
@@ -22,9 +22,7 @@ profiles:
   - name: darwin
     labels:
       platform: darwin
-      architecture: amd64
     env:
-      GOARCH: amd64
       GOOS: linux
     run:
       - go fmt
