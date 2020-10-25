@@ -5,6 +5,8 @@ labels:
   author: gatblau
   application: boot
   description: merges environment variables into configuration files
+env:
+  CGO_ENABLED: 0
 profiles:
   - name: linux
     labels:
