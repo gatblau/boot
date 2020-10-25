@@ -1,0 +1,26 @@
+---
+type: golang
+labels:
+  author: gatblau
+  application: boot
+  description:  merges environment variables into configuration files
+profiles:
+  - name: linux
+    suffix: none
+    labels:
+      platform: linux
+      architecture: amd64
+    run:
+      - go fmt
+      - export GOOS=linux; export GOARCH=amd64; go build . -v
+    target: boot
+  - name: darwin
+    suffix: -darwin
+    labels:
+      platform: darwin
+      architecture: amd64
+    run:
+      - go fmt
+      - export GOOS=darwin; export GOARCH=amd64; go build . -v
+    target: boot
+...
