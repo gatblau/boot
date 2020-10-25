@@ -1,5 +1,6 @@
 ---
 type: golang
+license: Apache Version 2
 labels:
   author: gatblau
   application: boot
