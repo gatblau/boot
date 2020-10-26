@@ -20,6 +20,7 @@ profiles:
       - go build -o boot-linux-amd64 -v
     target: boot-linux-amd64
   - name: darwin
+    default: true
     labels:
       platform: darwin
     env:
