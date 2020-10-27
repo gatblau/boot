@@ -24,7 +24,7 @@ profiles:
     labels:
       platform: darwin
     env:
-      GOOS: linux
+      GOOS: darwin
     run:
       - go fmt
       - go build -o boot-darwin-amd64 -v
