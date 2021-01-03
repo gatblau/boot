@@ -1,6 +1,4 @@
 ---
-type: golang
-license: Apache Version 2
 labels:
   author: gatblau
   application: boot
@@ -11,6 +9,10 @@ env:
   GOARCH: amd64
 profiles:
   - name: linux
+    application: boot
+    artefact: gatblau/boot
+    type: golang
+    license: Apache Version 2
     labels:
       platform: linux
     env:
@@ -21,6 +23,10 @@ profiles:
     target: boot-linux-amd64
   - name: darwin
     default: true
+    application: boot
+      artefact: gatblau/boot
+      type: golang
+      license: Apache Version 2
     labels:
       platform: darwin
     env:
