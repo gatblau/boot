@@ -24,9 +24,9 @@ profiles:
   - name: darwin
     default: true
     application: boot
-      artefact: gatblau/boot
-      type: golang
-      license: Apache Version 2
+    artefact: gatblau/boot
+    type: golang
+    license: Apache Version 2
     labels:
       platform: darwin
     env:
